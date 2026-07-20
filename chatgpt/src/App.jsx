@@ -1528,8 +1528,8 @@ function FactStrip({ facts, lang }) {
             key={text(item.label, "en")}
             type="button"
             className={activeFact === index ? "active" : ""}
+            aria-pressed={activeFact === index}
             onFocus={() => setActiveFact(index)}
-            onMouseEnter={() => setActiveFact(index)}
             onClick={() => setActiveFact(index)}
           >
             <Lightbulb aria-hidden="true" />
