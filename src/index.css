@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    @apply bg-slate-950 text-slate-100 font-sans min-h-screen selection:bg-purple-500 selection:text-white overflow-x-hidden touch-manipulation;
+    background-image: 
+      radial-gradient(at 50% 0%, rgba(126, 34, 206, 0.25) 0px, transparent 60%),
+      radial-gradient(at 100% 100%, rgba(79, 70, 229, 0.2) 0px, transparent 60%),
+      radial-gradient(at 0% 100%, rgba(225, 29, 72, 0.15) 0px, transparent 60%);
+    background-attachment: fixed;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Custom Mobile Phone Utilities */
+.mobile-app-shell {
+  max-width: 480px;
+  margin: 0 auto;
+  min-h-screen: 100vh;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  position: relative;
+  padding-bottom: 90px; /* Space for bottom nav dock */
+}
+
+/* Glassmorphism mobile card */
+.mobile-card {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.5rem;
+}
+
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  z-index: 50;
+  background: rgba(10, 15, 30, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+}
+
+/* Haptic touch animation */
+.touch-active:active {
+  transform: scale(0.96);
+  transition: transform 0.1s ease;
+}
+
+/* Mobile Story Reel progress bars */
+.story-bar {
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.story-bar-fill {
+  height: 100%;
+  background: #a855f7;
+  transition: width 0.3s ease;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); }
+  50% { box-shadow: 0 0 30px rgba(168, 85, 247, 0.8); }
+}
+
+.animate-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
