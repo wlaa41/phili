@@ -162,10 +162,12 @@ export default function App() {
           currentStageId={currentStageId}
         />
 
-        {/* Exam Checkpoint Modal */}
+        {/* Exam Checkpoint Modal with Language Props */}
         {showExamModal && (
           <CheckpointExam
             stage={currentStage}
+            lang={lang}
+            setLang={setLang}
             onCompleteExam={handleCompleteExam}
             onClose={() => setShowExamModal(false)}
           />
