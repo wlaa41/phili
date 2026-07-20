@@ -108,7 +108,7 @@ export default function App() {
 
           {/* TAB 3: MEMORY MATCHING GAME */}
           {activeTab === 'memory' && (
-            <MemoryGame onRewardXP={handleRewardXP} />
+            <MemoryGame lang={lang} onRewardXP={handleRewardXP} />
           )}
 
           {/* TAB 4: INTERACTIVE LAB SIMULATORS */}
